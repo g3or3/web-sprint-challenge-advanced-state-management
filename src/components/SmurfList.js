@@ -1,17 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { connect } from "react-redux";
+// import { useSelector } from "react-redux";
 import Smurf from "./Smurf";
 
-const test = {
-	smurfs: {
-		list: [],
-		loading: null,
-	},
-};
-
-const SmurfList = () => {
-	const { list, loading } = useSelector((state) => state.smurfs ?? test);
-
+const SmurfList = ({ list, loading }) => {
+	// const { list, loading } = useSelector((state) => state.smurfs ?? test);
 	// const isLoading = false;
 	// const testSmurf = {
 	// 	id: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
@@ -35,7 +28,12 @@ const SmurfList = () => {
 	);
 };
 
-export default SmurfList;
+const mapStateToProps = (state) => ({
+	list: state.smurfs.list,
+	loading: state.smurfs.loading,
+}); // loading: state.smurfs.loading,
+
+export default connect(mapStateToProps)(SmurfList);
 
 //Task List:
 //1. Connect the smurfs and loading state values to the SmurfList component.
