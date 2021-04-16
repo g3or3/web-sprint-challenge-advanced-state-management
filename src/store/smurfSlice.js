@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+export const initialState = {
+	list: [],
+	loading: false,
+	errorMsg: "",
+};
+
 const slice = createSlice({
 	name: "smurfs",
-	initialState: {
-		list: [],
-		loading: false,
-		errorMsg: "",
-	},
+	initialState,
 	reducers: {
 		setLoading: (smurfs) => {
 			smurfs.loading = !smurfs.loading;
