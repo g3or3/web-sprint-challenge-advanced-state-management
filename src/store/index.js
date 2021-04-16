@@ -10,4 +10,4 @@ export const store = configureStore({
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
-store.dispatch(fetchSmurfs());
+// store.dispatch(fetchSmurfs());
