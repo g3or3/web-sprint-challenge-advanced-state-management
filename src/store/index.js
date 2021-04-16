@@ -7,5 +7,7 @@ export const store = configureStore({
 	reducer: {
 		smurfs: smurfReducer,
 	},
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
+
+//.concat(logger)
