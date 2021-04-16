@@ -1,12 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Smurf from "./Smurf";
-import { store } from "../store/index";
 
 const SmurfList = () => {
-	console.log(store);
-	console.log(store.getState());
-
 	const { list, loading } = useSelector((state) => state.smurfs);
 
 	// const isLoading = false;
