@@ -2,8 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Smurf from "./Smurf";
 
+const test = {
+	smurfs: {
+		list: [],
+		loading: null,
+	},
+};
+
 const SmurfList = () => {
-	const { list, loading } = useSelector((state) => state.smurfs);
+	const { list, loading } = useSelector((state) => state.smurfs ?? test);
 
 	// const isLoading = false;
 	// const testSmurf = {
