@@ -27,9 +27,9 @@ const slice = createSlice({
 	},
 });
 
-export const fetchSmurfs = () => (dispatch) => {
+export const fetchSmurfs = () => async (dispatch) => {
 	dispatch(setLoading());
-	axios
+	await axios
 		.get("http://localhost:3333/smurfs")
 		.then((res) => {
 			dispatch(setSmurfs(res.data));
